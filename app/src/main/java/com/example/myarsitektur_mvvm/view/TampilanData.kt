@@ -24,16 +24,18 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.myarsitektur_mvvm.model.Data.Siswa
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TampilData(
+    statusUISiswa: Siswa,
     onBackBtnClick:()->Unit
 ){
     val items = listOf(
-        Pair(stringResource(id = R.string.nama_lengkap),"Contoh Nama"),
-        Pair(stringResource(id = R.string.jenis_kelamin),"Lainya"),
-        Pair(stringResource(id = R.string.alamat),"Yogyakarta")
+        Pair(stringResource(id = R.string.nama_lengkap), statusUISiswa.nama),
+        Pair(stringResource(id = R.string.jenis_kelamin), statusUISiswa.gender),
+        Pair(stringResource(id = R.string.alamat), statusUISiswa.alamat)
     )
     Scaffold (modifier = Modifier,
         {
